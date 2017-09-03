@@ -26,6 +26,7 @@ end
 def averages(grade_hash) # look at arrays
   grade_hash.transform_values do |scores|
     scores.sum / scores.length
+  end
 end
 
 # Return a letter grade for a numerical score.
@@ -71,5 +72,5 @@ def top_students(grade_hash, number_of_students)
   hash_of_averages = averages(grade_hash)
   sorted_hash_of_averages = hash_of_averages.sort_by { |student, average| -average }
   top_students = sorted_hash_of_averages.first(number_of_students)
-  return top_students.to_h.keys.
+  return top_students.to_h.keys
 end
